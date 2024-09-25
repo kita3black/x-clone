@@ -72,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### CodeSandbox
 
 https://codesandbox.io/templates
+
+### Firebase スタートガイド
+
+https://firebase.google.com/docs/firestore/quickstart?hl=ja
