@@ -10,12 +10,15 @@ export default function Timeline() {
         <h2>ホーム</h2>
       </div>
       <PostBox />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <Post
+        displayName="ここに名前が入る"
+        username="testid"
+        verified={true}
+        text="はじめてのツイート"
+        avatar="https://picsum.photos/100" 
+        img="https://picsum.photos/500"
+      />
+
     </div>
   )
 }

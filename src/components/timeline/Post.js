@@ -3,26 +3,27 @@ import { Avatar } from '@mui/material'
 import React from 'react'
 import "./Post.css"
 
-export default function Post() {
+export default function Post({displayName, username, verified, text, avatar, img}) {
   return (
     <div className="post">
       <div className="post--avatar">
-        <Avatar />
+        <Avatar src={avatar} />
       </div>
       <div className="post--body">
         <div className="post--header">
           <div className="post--headerText">
-            <h3>名前が入る</h3>
-            <span className="post--headerSpecial">
-              <VerifiedUser className="post--badge" />
-              @testid
-            </span>
+            <h3>{displayName}
+              <span className="post--headerSpecial">
+                {verified && <VerifiedUser className="post--badge" />}
+                {username}
+              </span>
+            </h3>
           </div>
           <div className="post-headerDescription">
-            <p>Reactなう。</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src="https://picsum.photos/500" alt="test" />
+        <img src={img} alt="test" />
         <div className="post--footer">
           <ChatBubbleOutline fontSize="small" />
           <Repeat fontSize="small" />
