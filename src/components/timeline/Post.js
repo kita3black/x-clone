@@ -3,7 +3,7 @@ import { Avatar } from '@mui/material'
 import React from 'react'
 import "./Post.css"
 
-export default function Post({displayName, username, verified, text, avatar, img}) {
+export default function Post({displayName, username, verified, text, avatar, image}) {
   return (
     <div className="post">
       <div className="post--avatar">
@@ -23,7 +23,7 @@ export default function Post({displayName, username, verified, text, avatar, img
             <p>{text}</p>
           </div>
         </div>
-        <img src={img} alt="test" />
+        <img src={image} alt="test" />
         <div className="post--footer">
           <ChatBubbleOutline fontSize="small" />
           <Repeat fontSize="small" />

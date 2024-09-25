@@ -16,7 +16,7 @@ export default function Timeline() {
         verified={true}
         text="はじめてのツイート"
         avatar="https://picsum.photos/100" 
-        img="https://picsum.photos/500"
+        image="https://picsum.photos/500"
       />
 
     </div>
