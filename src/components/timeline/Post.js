@@ -23,7 +23,7 @@ export default function Post({displayName, username, verified, text, avatar, ima
             <p>{text}</p>
           </div>
         </div>
-        <img src={image} alt="test" />
+        {image && <img src={image} alt="test" />}
         <div className="post--footer">
           <ChatBubbleOutline fontSize="small" />
           <Repeat fontSize="small" />
