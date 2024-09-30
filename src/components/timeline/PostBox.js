@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./PostBox.css"
 import { Avatar,Button } from '@mui/material'
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import db from "../../firebase";
 
 export default function PostBox() {
@@ -19,6 +19,7 @@ export default function PostBox() {
       text: postMessage,
       avatar: "https://picsum.photos/200",
       image: postImage,
+      timestamp: serverTimestamp(),
     });
 
     setPostMessage("");

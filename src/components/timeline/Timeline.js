@@ -5,7 +5,9 @@ import Post from './Post'
 import db from "../../firebase";
 import {
   collection,
-  onSnapshot
+  onSnapshot,
+  query,
+  orderBy
 } from "firebase/firestore";
 
 export default function Timeline() {
@@ -14,9 +16,10 @@ export default function Timeline() {
   useEffect(() => {
     //post取得
     const postData = collection(db, "posts");
+    const q = query(postData, orderBy("timestamp", "desc"));
 
     //リアルタイムでデータを取得
-    onSnapshot(postData, (querySnapshot) => {
+    onSnapshot(q, (querySnapshot) => {
       setPosts(querySnapshot.docs.map((doc) => doc.data()));
     });
   }, []);
