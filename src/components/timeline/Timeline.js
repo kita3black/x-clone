@@ -9,6 +9,7 @@ import {
   query,
   orderBy
 } from "firebase/firestore";
+import FlipMove from "react-flip-move";
 
 export default function Timeline() {
   const [posts, setPosts] = useState([]);
@@ -30,18 +31,19 @@ export default function Timeline() {
         <h2>ホーム</h2>
       </div>
       <PostBox />
-      {posts.map((post) => (
-        <Post
-          key={post.text}
-          displayName={post.displayName}
-          username={post.username}
-          verified={post.verified}
-          text={post.text}
-          avatar={post.avatar}
-          image={post.image}
-        />
-      ))}
-
+      <FlipMove>
+        {posts.map((post) => (
+          <Post
+            key={post.text}
+            displayName={post.displayName}
+            username={post.username}
+            verified={post.verified}
+            text={post.text}
+            avatar={post.avatar}
+            image={post.image}
+          />
+        ))}
+      </FlipMove>
     </div>
   )
 }
