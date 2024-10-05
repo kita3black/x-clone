@@ -76,3 +76,78 @@ https://codesandbox.io/templates
 ### Firebase スタートガイド
 
 https://firebase.google.com/docs/firestore/quickstart?hl=ja
+
+### Firebase デプロイ
+
+```
+>npm install -g firebase-tools
+ここでGoogleアカウントにログインする
+
+>firebase init
+
+? Are you ready to proceed? Yes
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to
+confirm your choices.
+
+>firebase init
+
+? Are you ready to proceed? Yes
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to
+confirm your choices. Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: x-clone-68452 (x-clone)
+i  Using project x-clone-68452 (x-clone)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
++  Wrote build/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
++  Firebase initialization complete!
+
+>npm run build
+
+> x-clone-study@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  163.47 kB  build\static\js\main.4192d498.js
+  1.07 kB    build\static\css\main.63450b0d.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  yarn global add serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+>firebase deploy
++  Deploy complete!
+
+```
